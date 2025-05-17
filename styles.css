@@ -1,63 +1,83 @@
-/* สีหลัก */
+/* ตัวแปรสีหลัก */
 :root {
   --primary-color: #FF6600;
   --secondary-color: #666666;
   --background-color: #FFFFFF;
+  --section-bg: #FFFFFF;
+  --section-alt-bg: #FAFAFA;
 }
 
-/* สไตล์บอดี้ */
-body {
+/* พื้นหลัง */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: sans-serif;
+  padding: 0;
+}
+body {
+  font-family: 'Mitr', sans-serif;
   background: var(--background-color);
   color: var(--secondary-color);
   line-height: 1.6;
 }
 
-/* หัวเว็บ */
+/* หัว */
 .site-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   background: var(--primary-color);
   color: #fff;
-  text-align: center;
   padding: 2rem 1rem;
 }
-
-/* โลโก้ ม.นเรศวร */
 .site-header .logo {
   height: 200px;
-  margin-bottom: 1rem;
 }
-
-/* สื่อการเรียนรู้ */
 .site-header h1 {
   margin: 0;
-  font-size: 2.5rem; 
+  font-size: 2.5rem;
+  text-align: center;
 }
-/* พลังงานยั่งยืน */
 .site-header .subtitle {
   display: block;
-  font-size: 2rem; 
+  font-size: 1.5rem;
+  opacity: 0.9;
   margin-top: 0.5rem;
 }
 
-/* คอนเทนเนอร์หลัก */
+/* ย่อยr */
 .container {
   max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem 1rem;
+  margin: 2rem auto;
+  padding: 0 1rem;
 }
 
-/* หัวข้อแต่ละ Section */
+/* พื้นหลัง เงา  */
+section {
+  background: var(--section-bg);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 1.5rem;
+}
+section:nth-of-type(even) {
+  background: var(--section-alt-bg);
+}
 h2 {
   color: var(--primary-color);
+  font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
-/* วิดีโอในอัตราส่วน 16:9 */
+/* เงา วีดีโอ */
 .video-container {
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
+  margin-top: 1rem;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 .video-container iframe {
   position: absolute;
@@ -67,10 +87,20 @@ h2 {
   height: 100%;
 }
 
-/* ส่วนท้ายเว็บไซต์ */
+/* Footer */
 .site-footer {
   text-align: center;
-  margin-top: 1rem;
-  padding: 2rem;
+  padding: 2rem 1rem;
   border-top: 1px solid #ddd;
+}
+
+/* จัดมือถือ */
+@media (max-width: 768px) {
+  .site-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  .site-header .logo {
+    margin-bottom: 1rem;
+  }
 }
